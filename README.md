@@ -1,14 +1,13 @@
-# A Better Way to Build Apps
-## 我的开发环境
+# 配置开发环境（A Better Way to Build Apps）
 
-### 步骤0：创建项目挂载环境
+### 创建项目挂载环境
 ```bash
 docker create --name wwwdir \
 	-v ~/workspace/:/wwwdir \
 	alpine:latest /bin/sh
 ```
 
-### 步骤1：运行MEMCACHED容器
+### 运行 `memcached` 容器
 ```bash
 docker run --name memcached \
 	-h memcached \
@@ -16,7 +15,7 @@ docker run --name memcached \
 	memcached -u memcache -vv
 ```
 
-### 步骤2: 运行REDIS容器
+### 运行 `redis` 容器
 ```bash
 docker run --name redis -h redis \
 	-v ~/docker/redis/redis.conf:/etc/redis.conf \
@@ -26,7 +25,7 @@ docker run --name redis -h redis \
 	/bin/sh -c "redis-server /etc/redis.conf && while true; do sleep 1000; done"
 ```
 
-### 步骤3: 运行MYSQL容器
+### 运行 `mysql` 容器
 ```bash
 docker run --name mysql -h mysql \
 	-v ~/docker/mysql/conf.d:/etc/mysql/conf.d \
@@ -36,7 +35,7 @@ docker run --name mysql -h mysql \
 	mysqld
 ```
 
-### 步骤4: 运行PHP容器
+### 运行 `php` 容器
 ```bash
 docker run --name php -h phpfpm \
 	-v ~/docker/php/php-fpm.conf:/usr/local/etc/php-fpm.d/www.conf \
@@ -50,7 +49,7 @@ docker run --name php -h phpfpm \
 	php-fpm -F
 ```
 
-### 步骤5: 运行NGINX容器
+### 运行 `nginx` 容器
 ```bash
 docker run --name nginx -h nginx \
 	-v ~/docker/nginx:/etc/nginx \
