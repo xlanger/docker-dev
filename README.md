@@ -1,4 +1,4 @@
-# 配置开发环境（A Better Way to Build Apps）
+# 配置开发环境
 
 ### 创建项目挂载环境
 ```bash
