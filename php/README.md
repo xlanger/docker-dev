@@ -1,4 +1,4 @@
-# Build a php image base on afficial image
+# 从官方镜像创建
 
 从PHP官方镜像安装扩展非常简单，它提供了几个工具命令，只是安装扩展前需要手动安装相应的依赖。
 
@@ -50,7 +50,8 @@ RUN apt-get update && apt-get install -y \
         libcurl4-openssl-dev \
         libxml2-dev \
         --no-install-recommends && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-install -j$(nproc) iconv mcrypt gettext curl mysqli pdo pdo_mysql \
+    && docker-php-ext-install -j$(nproc) \
+    	iconv mcrypt gettext curl mysqli pdo pdo_mysql zip \
         mbstring bcmath opcache xml simplexml sockets hash soap \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd
