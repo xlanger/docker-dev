@@ -1,6 +1,6 @@
 FROM centos:latest
 
-MAINTAINER xlang007er@gmail.com
+MAINTAINER xlangersir@gmail.com
 
 ENV NGINX_VERSION 1.11.10
 
