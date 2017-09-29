@@ -1,8 +1,8 @@
 # 从官方镜像创建
 
-从PHP官方镜像安装扩展非常简单，它提供了几个工具命令，只是安装扩展前需要手动安装相应的依赖。
+PHP官方镜像提供了几个工具命令来帮助安装扩展，只是安装扩展前需要手动安装相应的依赖。
 
-在安装内核提供的扩展时，用工具 ` docker-php-ext-install` 安装需要的扩展，如：`docker-php-ext-install -j$(nproc) mcrypt`；用工具命令 `docker-php-ext-configure` 自定义配置安装扩展时的配置参数，如：
+用工具命令 ` docker-php-ext-install` 安装PHP内核提供的扩展，如：`docker-php-ext-install -j$(nproc) mcrypt`，用 `docker-php-ext-configure` 自定义配置安装扩展时的配置参数，如：
 <!--more-->
 ```
 docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
