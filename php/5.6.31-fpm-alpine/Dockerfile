@@ -1,4 +1,4 @@
-FROM php:5.6.30-fpm-alpine
+FROM php:5.6.31-fpm-alpine
 
 RUN apk add --no-cache --virtual .build-deps \
         autoconf \

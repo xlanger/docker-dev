@@ -1,7 +1,5 @@
 FROM centos:latest
 
-MAINTAINER xlangersir@gmail.com
-
 ENV NGINX_VERSION 1.11.10
 
 WORKDIR /tmp/tmpdir
