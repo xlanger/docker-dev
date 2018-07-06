@@ -1,4 +1,4 @@
-FROM redis:3.0.7-alpine
+FROM redis:4.0.10-alpine
 
 RUN apk add --no-cache --virtual .build-deps \
 		tzdata \
