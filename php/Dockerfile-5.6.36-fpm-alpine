@@ -18,6 +18,7 @@ RUN apk add --no-cache --virtual .build-deps \
         libjpeg-turbo-dev \
         libpng-dev \
         curl-dev \
+        libressl-dev \
         libmcrypt-dev \
         libxml2-dev \
         cyrus-sasl-dev \
@@ -35,6 +36,7 @@ RUN apk add --no-cache --virtual .build-deps \
     && pecl install swoole-1.10.5 \
     && pecl install mongodb-1.5.0 \
     && docker-php-ext-enable redis memcached xdebug swoole mongodb \
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" >  /etc/timezone \
     && apk del .build-deps

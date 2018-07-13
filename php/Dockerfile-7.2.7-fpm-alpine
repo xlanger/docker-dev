@@ -27,7 +27,7 @@ RUN apk add --no-cache --virtual .build-deps \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) \
        	gd gettext mysqli pdo_mysql opcache soap sockets pcntl \
-    && pecl install redis-4.0.2 \
+    && pecl install redis-4.1.0 \
     && pecl install memcached-3.0.4 \
     && pecl install xdebug-2.6.0 \
     && pecl install swoole-2.1.3 \
