@@ -23,30 +23,6 @@ services:
             - "memcached:172.28.0.6"
             - "redis:172.28.0.7"
             - "mongo:172.28.0.9"
-    php5:
-        hostname: php5
-        container_name: php5
-        image: xphp:5.6.36-fpm-alpine
-        command: php-fpm -F
-        volumes:
-            - ~/Docker/php5/php-fpm.conf:/usr/local/etc/php-fpm.conf
-            - ~/Docker/php5/php-fpm.d:/usr/local/etc/php-fpm.d
-            - ~/Docker/php5/php.ini:/usr/local/etc/php/php.ini
-            - ~/Docker/log/php5:/var/log/php
-            - ~/Workspace:/wwwdir
-        networks:
-            devnet:
-                ipv4_address: 172.28.0.3
-                ipv6_address: 2001:3984:3989::03
-        extra_hosts:
-            - "mysql:172.28.0.5"
-            - "memcached:172.28.0.6"
-            - "redis:172.28.0.7"
-            - "mongo:172.28.0.9"
-            - "bukeadminapi.x.com:172.28.0.4"
-            - "bukeadminapi.x.com:2001:3984:3989::04"
-            - "gitlab.x.com:172.28.0.4"
-            - "gitlab.x.com:2001:3984:3989::04"
     nginx:
         hostname: nginx
         container_name: nginx
