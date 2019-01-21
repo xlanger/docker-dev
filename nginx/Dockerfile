@@ -54,7 +54,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		gcc \
 		libc-dev \
 		make \
-		openssl-dev \
+		openssl-dev=1.1.1a-r1 \
 		pcre-dev \
 		zlib-dev \
 		linux-headers \
