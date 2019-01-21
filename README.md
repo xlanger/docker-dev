@@ -1,5 +1,3 @@
-# 开发环境适用的Dockerfile
-
 `docker-compose.yml` 参考：
 ```ymlversion: '3'
 version: '3'
