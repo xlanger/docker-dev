@@ -2,6 +2,7 @@
 
 `docker-compose.yml` 参考：
 ```ymlversion: '3'
+version: '3'
 services:
     php:
         hostname: php
