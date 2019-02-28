@@ -1,6 +1,4 @@
-FROM mysql:5.7.22
+FROM mysql:5.7.25
 
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && echo "Asia/Shanghai" >  /etc/timezone 
-
-CMD ["mysqld"]
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" >  /etc/timezone
