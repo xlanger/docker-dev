@@ -1,6 +1,8 @@
 FROM php:5.6.36-fpm-alpine
 
-RUN apk add --no-cache --virtual .build-deps \
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
+	&& apk update \
+	&& apk add --no-cache --virtual .build-deps \
         autoconf \
         file \
         gcc \
