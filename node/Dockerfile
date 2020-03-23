@@ -1,4 +1,4 @@
-FROM node:10.6.0-alpine
+FROM node:12.16-alpine
 
 RUN apk add --no-cache --virtual .build-deps \
         tzdata \

@@ -1,4 +1,4 @@
-FROM php:7.3.3-fpm-alpine
+FROM php:7.4-fpm-alpine
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
 	&& apk update \
@@ -26,14 +26,14 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
         cyrus-sasl-dev \
         libmemcached-dev \
     && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) \
        	gd gettext mysqli pdo_mysql opcache soap sockets pcntl bcmath \
-    && pecl install redis-4.3.0 \
-    && pecl install memcached-3.1.3 \
-    && pecl install xdebug-2.7.0 \
-    && pecl install swoole-4.3.1 \
-    && pecl install mongodb-1.5.3 \
+    && pecl install redis-5.2.1 \
+    && pecl install memcached-3.1.5 \
+    && pecl install xdebug-2.9.3 \
+    && pecl install swoole-4.4.16 \
+    && pecl install mongodb-1.7.4 \
     && docker-php-ext-enable redis memcached xdebug swoole mongodb \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
